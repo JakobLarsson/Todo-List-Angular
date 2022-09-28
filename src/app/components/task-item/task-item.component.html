@@ -1,4 +1,8 @@
-<div class="task">
+<div
+  class="task"
+  [ngClass]="task.reminder ? 'alert' : 'nonalert'"
+  (dblclick)="onChangeAlert(task)"
+>
   <h3>
     {{ task.text }}
     <fa-icon

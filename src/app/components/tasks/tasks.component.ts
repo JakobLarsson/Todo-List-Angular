@@ -23,4 +23,10 @@ export class TasksComponent implements OnInit {
         () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
       );
   }
+
+  changeAlertTask(task: Task) {
+    task.reminder = !task.reminder;
+    console.log(task.reminder);
+    this.taskService.updateAlert(task).subscribe();
+  }
 }
